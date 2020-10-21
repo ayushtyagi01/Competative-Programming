@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Solution {
 
-
+//isAnagram function starts here
     static boolean isAnagram(String a, String b) {
         a=a.toLowerCase();
         b=b.toLowerCase();
