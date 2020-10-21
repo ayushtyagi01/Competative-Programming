@@ -1,0 +1,63 @@
+
+
+    public static String getSmallestAndLargest(String s, int k) {
+        String smallest = "";
+        String largest = "";
+        int max=0;
+        int min=0;
+        
+        for(int i=1;i<s.length()-k+1;i++) {
+            if(s.charAt(i)<s.charAt(min)&& s.charAt(i)!=' ')
+            {    
+                    min=i;
+        }
+            else if(s.charAt(i)==s.charAt(min)){
+                int x=i+1;
+                int a=min+1;
+                while(true) {
+                    if(s.charAt(x)<s.charAt(a)) {
+                                min=i;
+                                break;
+                            }
+                if(s.charAt(x)>s.charAt(a))
+                        break;
+                if(s.charAt(x)==s.charAt(a)) {
+                    x++;
+                    a++;
+                }
+                    }
+        }
+            if(s.charAt(i)>s.charAt(max)&& s.charAt(i)!=' ')
+            {    
+                    max=i;
+        }
+            else if(s.charAt(i)==s.charAt(max)){
+                int x=i+1;
+                int a=max+1;
+                while(true) {
+                    if(s.charAt(x)>s.charAt(a)) {
+                                max=i;
+                                break;
+                            }
+                if(s.charAt(x)<s.charAt(a))
+                        break;
+                if(s.charAt(x)==s.charAt(a)) {
+                    x++;
+                    a++;
+                }
+                    }
+            }
+            }
+
+smallest=s.substring(min,min+k);
+largest=s.substring(max,max+k);
+
+//System.out.println(min+" " +max);
+    
+        // Complete the function
+        // 'smallest' must be the lexicographically smallest substring of length 'k'
+        // 'largest' must be the lexicographically largest substring of length 'k'
+        
+        return smallest + "\n" + largest;
+    }
+
