@@ -1,13 +1,22 @@
-public class Solution {
-    public int maxProfit(int prices[]) {
-        int minprice = Integer.MAX_VALUE;
-        int maxprofit = 0;
-        for (int i = 0; i < prices.length; i++) {
-            if (prices[i] < minprice)
-                minprice = prices[i];
-            else if (prices[i] - minprice > maxprofit)
-                maxprofit = prices[i] - minprice;
+class Solution {
+    public int maxProfit(int[] a) {
+        int local_profit=0,global_profit=0,global_sell=0;
+        if(a.length>0){
+        global_sell=a[a.length-1];
+        for(int i=a.length-1;i>=0;i--){
+        local_profit=global_sell-a[i];
+            if(local_profit>global_profit){
+                global_profit=local_profit;
+                
+            }
+            else if(a[i]>global_sell){
+                global_sell=a[i];
+            }
+           
         }
-        return maxprofit;
+        return global_profit;
+        }
+        else
+            return global_profit;
     }
 }
