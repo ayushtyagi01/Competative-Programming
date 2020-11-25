@@ -1,2 +1,2 @@
 # Competative-Programming
-Java problems solution 
+Java problems solution of LeetCode and Geeks for Geeks 
