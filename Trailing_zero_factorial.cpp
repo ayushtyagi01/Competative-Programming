@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    int n,c=0;
+	    cin>>n;
+	    for(int i=5;i<=n;i*=5){
+	        c=c+n/i;
+	    }
+	    cout<<c<<"\n";
+	}
+	return 0;
+}
